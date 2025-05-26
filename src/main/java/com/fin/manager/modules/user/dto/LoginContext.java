@@ -1,10 +1,34 @@
 package com.fin.manager.modules.user.dto;
 
+import com.fin.manager.modules.user.dto.LoginRequestDTO;
 import com.fin.manager.modules.user.entity.User;
 
-public record LoginContext(LoginRequestDTO loginRequestDTO, User user) {
+public class LoginContext {
+    private final LoginRequestDTO loginRequestDTO;
+    private User user;
+    private String jwtToken;
 
-    public LoginContext withUser(User user) {
-        return new LoginContext(this.loginRequestDTO, user);
+    public LoginContext(LoginRequestDTO loginRequestDTO) {
+        this.loginRequestDTO = loginRequestDTO;
+    }
+
+    public LoginRequestDTO getLoginRequestDTO() {
+        return loginRequestDTO;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public String getJwtToken() {
+        return jwtToken;
+    }
+
+    public void setJwtToken(String jwtToken) {
+        this.jwtToken = jwtToken;
     }
 }

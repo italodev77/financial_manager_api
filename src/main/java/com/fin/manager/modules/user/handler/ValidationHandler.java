@@ -17,7 +17,7 @@ public class ValidationHandler implements Handler {
 
     @Override
     public void handle(LoginContext context) {
-        var request = context.loginRequestDTO();
+        var request = context.getLoginRequestDTO();
         if (request.email() == null || request.email().isBlank() ||
                 request.password() == null || request.password().isBlank()) {
             throw new IllegalArgumentException("Email e senha são obrigatórios.");

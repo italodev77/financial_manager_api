@@ -19,8 +19,8 @@ public class LoginService {
 
     public String processLogin(LoginRequestDTO loginRequestDTO) {
         Handler chain = chainBuilder.buildChain();
-        LoginContext context = new LoginContext(loginRequestDTO, null);
+        LoginContext context = new LoginContext(loginRequestDTO);
         chain.handle(context);
-        return tokenService.generateToken(context.user());
+        return tokenService.generateToken(context.getUser());
     }
 }

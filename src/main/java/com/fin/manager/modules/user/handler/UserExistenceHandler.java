@@ -8,13 +8,13 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
-@Order(2)
+@Order(1)
 public class UserExistenceHandler implements Handler {
-
-    private Handler next;
 
     @Autowired
     private UserRepository userRepository;
+
+    private Handler next;
 
     @Override
     public void setNext(Handler next) {
@@ -23,16 +23,17 @@ public class UserExistenceHandler implements Handler {
 
     @Override
     public void handle(LoginContext context) {
-        String email = context.loginRequestDTO().email();
+        String email = context.getLoginRequestDTO().email();
+
         User user = (User) userRepository.findByEmail(email)
                 .orElseThrow(() -> new IllegalArgumentException("Usuário não encontrado"));
 
-        System.out.println("Usuário encontrado.");
+        context.setUser(user);
 
-        LoginContext updatedContext = context.withUser(user);
+        System.out.println("Usuário encontrado: " + user.getEmail());
 
         if (next != null) {
-            next.handle(updatedContext);
+            next.handle(context);
         }
     }
 }
