@@ -1,4 +1,4 @@
-package com.fin.manager.config;
+package com.fin.manager.infrastructure.config;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

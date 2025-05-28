@@ -1,10 +1,10 @@
-package com.fin.manager.config;
+package com.fin.manager.infrastructure.config;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.fin.manager.modules.user.entity.User;
+import com.fin.manager.adapters.out.entities.JpaUsuarioEntity;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -17,7 +17,7 @@ public class TokenService {
     @Value("${flix.security.secret}")
     private String secret;
 
-    public String generateToken(User user) {
+    public String generateToken(JpaUsuarioEntity user) {
         Algorithm algorithm = Algorithm.HMAC256(secret);
 
         return JWT.create()

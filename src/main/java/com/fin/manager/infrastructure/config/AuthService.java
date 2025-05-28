@@ -1,4 +1,4 @@
-package com.fin.manager.config;
+package com.fin.manager.infrastructure.config;
 
 import com.fin.manager.modules.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;

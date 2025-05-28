@@ -1,4 +1,4 @@
-package com.fin.manager.config;
+package com.fin.manager.infrastructure.config;
 
 import lombok.Builder;
 

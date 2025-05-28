@@ -1,7 +1,7 @@
 package com.fin.manager.modules.user.handler;
 
-import com.fin.manager.modules.user.dto.LoginContext;
-import com.fin.manager.modules.user.entity.User;
+import com.fin.manager.domain.entity.user.dto.LoginContext;
+import com.fin.manager.adapters.out.entities.JpaUsuarioEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -23,7 +23,7 @@ public class AuthHandler implements Handler {
 
     @Override
     public void handle(LoginContext context) {
-        User user = context.getUser();
+        JpaUsuarioEntity user = context.getUser();
 
         if (user == null) {
             throw new RuntimeException("Usuário não encontrado para autenticação.");

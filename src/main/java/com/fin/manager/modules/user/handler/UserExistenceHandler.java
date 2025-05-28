@@ -1,7 +1,7 @@
 package com.fin.manager.modules.user.handler;
 
-import com.fin.manager.modules.user.dto.LoginContext;
-import com.fin.manager.modules.user.entity.User;
+import com.fin.manager.domain.entity.user.dto.LoginContext;
+import com.fin.manager.adapters.out.entities.JpaUsuarioEntity;
 import com.fin.manager.modules.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
@@ -25,7 +25,7 @@ public class UserExistenceHandler implements Handler {
     public void handle(LoginContext context) {
         String email = context.getLoginRequestDTO().email();
 
-        User user = (User) userRepository.findByEmail(email)
+        JpaUsuarioEntity user = (JpaUsuarioEntity) userRepository.findByEmail(email)
                 .orElseThrow(() -> new IllegalArgumentException("Usuário não encontrado"));
 
         context.setUser(user);

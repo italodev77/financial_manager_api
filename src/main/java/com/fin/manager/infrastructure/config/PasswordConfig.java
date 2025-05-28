@@ -1,4 +1,4 @@
-package com.fin.manager.config;
+package com.fin.manager.infrastructure.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

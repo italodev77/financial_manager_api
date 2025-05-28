@@ -1,11 +1,10 @@
-package com.fin.manager.modules.user.dto;
+package com.fin.manager.domain.entity.user.dto;
 
-import com.fin.manager.modules.user.dto.LoginRequestDTO;
-import com.fin.manager.modules.user.entity.User;
+import com.fin.manager.adapters.out.entities.JpaUsuarioEntity;
 
 public class LoginContext {
     private final LoginRequestDTO loginRequestDTO;
-    private User user;
+    private JpaUsuarioEntity user;
     private String jwtToken;
 
     public LoginContext(LoginRequestDTO loginRequestDTO) {
@@ -16,11 +15,11 @@ public class LoginContext {
         return loginRequestDTO;
     }
 
-    public User getUser() {
+    public JpaUsuarioEntity getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(JpaUsuarioEntity user) {
         this.user = user;
     }
 

@@ -1,4 +1,4 @@
-package com.fin.manager.modules.user.dto;
+package com.fin.manager.domain.entity.user.dto;
 
 
 public record LoginRequestDTO(String email, String password) {

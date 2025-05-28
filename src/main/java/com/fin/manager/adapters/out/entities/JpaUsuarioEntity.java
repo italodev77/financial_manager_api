@@ -1,4 +1,4 @@
-package com.fin.manager.modules.user.entity;
+package com.fin.manager.adapters.out.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -11,7 +11,7 @@ import java.util.List;
 @Entity
 @Table(name = "TB_users")
 @Data
-public class User implements UserDetails {
+public class JpaUsuarioEntity implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +20,7 @@ public class User implements UserDetails {
     private String email;
 
     private String password;
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

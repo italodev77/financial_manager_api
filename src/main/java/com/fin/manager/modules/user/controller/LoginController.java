@@ -1,7 +1,7 @@
 package com.fin.manager.modules.user.controller;
 
-import com.fin.manager.modules.user.dto.LoginRequestDTO;
-import com.fin.manager.modules.user.dto.LoginResponseDTO;
+import com.fin.manager.domain.entity.user.dto.LoginRequestDTO;
+import com.fin.manager.domain.entity.user.dto.LoginResponseDTO;
 import com.fin.manager.modules.user.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,6 +1,6 @@
 package com.fin.manager.modules.user.handler;
 
-import com.fin.manager.modules.user.dto.LoginContext;
+import com.fin.manager.domain.entity.user.dto.LoginContext;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
